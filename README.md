@@ -6,7 +6,7 @@ Grad-Mimic aligns per-sample gradients with a *task vector*---the weight differe
 
 > **ArXiv Page:** [arXiv 2501.06708](https://arxiv.org/abs/2501.06708)
 
-Framework
+![Framework](figures/framework.png)
 
 ---
 
@@ -26,7 +26,19 @@ Framework
 
 The mimic score captures meaningful sample quality — top-scoring samples are semantically coherent, while low-scoring ones tend to be noisy or ambiguous:
 
-Mimic Score Examples
+![Mimic Score Examples](figures/final.png)
+
+---
+
+## Key Results
+
+On DataComp 100M+, Grad-Mimic reaches the same training loss **20.7% faster** than vanilla training:
+
+![DataComp 100M+ Learning Curve](figures/image.png)
+
+Grad-Mimic consistently achieves lower testing loss across epochs compared to baselines:
+
+![Learning Curve — Testing Loss](figures/learning_curve_testing_loss.pdf)
 
 ---
 
@@ -130,27 +142,13 @@ Key arguments:
 
 ---
 
-### Loading results
-
-```python
-import pickle
-
-with open("outputs/logs/pretrained_linear_probing/<stem>_results.pkl", "rb") as f:
-    results = pickle.load(f)
-
-# results["testing_accuracy"]  → list of length num_epoch + 1 (index 0 = init)
-print(results["testing_accuracy"])
-```
-
----
-
 ## Citation
 
 ```bibtex
 @inproceedings{
     huang2026evaluating,
     title={Evaluating Sample Utility for Efficient Data Selection by Mimicking Model Weights},
-    author={Huang, Tzu-Heng and Bilkhu, Manjot and Cooper, John and Sala, Frederic and Movellan, Javier},
+    author={Tzu-Heng Huang and Manjot Bilkhu and John Cooper and Frederic Sala and Javier Movellan},
     booktitle={Forty-third International Conference on Machine Learning},
     year={2026},
     url={https://openreview.net/forum?id=EX97eHYHIT}
