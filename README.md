@@ -34,11 +34,11 @@ The mimic score captures meaningful sample quality — top-scoring samples are s
 
 On DataComp 100M+, Grad-Mimic reaches the same training loss **20.7% faster** than vanilla training:
 
-![DataComp 100M+ Learning Curve](figures/image.png)
+<img src="figures/image.png" alt="DataComp 100M+ Learning Curve" width="50%">
 
 Grad-Mimic consistently achieves lower testing loss across epochs compared to baselines:
 
-![Learning Curve — Testing Loss](figures/learning_curve_testing_loss.pdf)
+<img src="figures/learning_curve_testing_loss.png" alt="Learning Curve — Testing Loss" width="50%">
 
 ---
 
